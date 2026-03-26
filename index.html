@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fridge Hero</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Load Marked.js to parse markdown directly (No ES Module needed) -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>🧑‍🍳 Fridge Hero</h1>
+            <p class="subtitle">Enter 3 ingredients and let AI work its magic!</p>
+        </header>
+        
+        <div class="input-group api-group">
+            <label for="api-key" class="visually-hidden">Gemini API Key</label>
+            <input type="password" id="api-key" placeholder="Enter your Gemini API Key to use the app">
+            <p class="help-text">Your key is kept safe and only used locally in your browser to contact Google APIs.</p>
+        </div>
+
+        <div class="ingredients-container">
+            <div class="input-group">
+                <input type="text" id="ing-1" placeholder="Ingredient 1 (e.g., Chicken)">
+            </div>
+            <div class="input-group">
+                <input type="text" id="ing-2" placeholder="Ingredient 2 (e.g., Rice)">
+            </div>
+            <div class="input-group">
+                <input type="text" id="ing-3" placeholder="Ingredient 3 (e.g., Broccoli)">
+            </div>
+        </div>
+
+        <button id="cook-btn" class="magic-button">Cook Magic ✨</button>
+
+        <div id="loading" class="hidden">
+            <div class="loader-spinner"></div>
+            <p>Cooking up a brilliant recipe... 🍳</p>
+        </div>
+
+        <div id="recipe-card" class="card hidden">
+            <div id="recipe-content"></div>
+        </div>
+    </div>
+    
+    <!-- Using a classic script so it works perfectly even when you double click the file! -->
+    <script src="script.js"></script>
+</body>
+</html>
